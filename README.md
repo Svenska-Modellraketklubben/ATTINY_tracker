@@ -11,3 +11,6 @@ Furthermore, the MCU is powered by a button cell(3V) or small lipo package(3.6V)
 The Attiny85 MCU is programmed to recieve the manchester encoded data through a standard 433.92Mhz RX module using OOK modulation.
 The 433.92Mhz RX module has beside digital output also analog output so the beacon signal can be heard far before the signal strength is high enough in order to recieve the data correctly. The RX module is connected to a 433MHz YAGI antenna in order to find the direction of incoming beacon signal.
 If data is correctly recieved, checked by crc16, the data is presented on a small oled display connected to the MCU so one can see what unit was transmitting, temperature and voltage.
+
+# Schemas
+Not yet
