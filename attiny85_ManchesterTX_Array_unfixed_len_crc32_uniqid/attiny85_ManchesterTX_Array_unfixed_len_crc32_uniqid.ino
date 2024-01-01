@@ -58,7 +58,7 @@ PIN 4 (PCINT4/XTAL2/CLKO/OC1B/ADC2) PB4 -| 3   6 |- PB1 (MISO/DO/AIN1/OC0B/OC1A/
 
   Manchester Transmitter example
   
-  In this example transmitter will send 10 bytes array  per transmittion
+  In this example transmitter will send 22 bytes array  per transmittion
 
   try different speeds using this constants, your maximum possible speed will 
   depend on various factors like transmitter type, distance, microcontroller speed, ...
