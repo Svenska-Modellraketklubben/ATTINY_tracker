@@ -1,16 +1,32 @@
+// Simple attiny beacon
+// Attiny85 manchester rx array unfixed length with crc and unique id and presentation on oled display
+
+// Manchester code used with radio transmitter
+// https://github.com/mchr3k/arduino-libs-manchester
 #include "Manchester.h"
+
+// CRC check of payload
+// https://github.com/RobTillaart/CRC
+//#include "CRC32.h"
 #include "CRC.h"
 #include "CRC16.h"
 
+// my library own for timestamp
 #include "timestamp.h"
+
+// Read and Write EEPROM
 #include <EEPROM.h>
 
 // Simple I2C test for ebay 128x64 oled.
-
+// To communicate with the oled display, i2c
 #include <Wire.h>
+
+// OLED driver
+// https://github.com/greiman/SSD1306Ascii
 #include "SSD1306Ascii.h"
 #include "SSD1306AsciiWire.h"
 
+// oled display i2c address
 // 0X3C+SA0 - 0x3C or 0x3D
 #define I2C_ADDRESS 0x3C
 
@@ -254,6 +270,5 @@ void loop()
     };
     //digitalWrite(LED_PIN_ERROR, LOW);
     man.beginReceiveArray(union_size, settings.byteArray);
-
   }
 }

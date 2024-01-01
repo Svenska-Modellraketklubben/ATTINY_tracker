@@ -1,26 +1,38 @@
+// Simple attiny beacon
+// Attiny85 manchester tx array unfixed length with crc and unique id
+
 // Manchester code used with radio transmitter
+// https://github.com/mchr3k/arduino-libs-manchester
 #include <Manchester.h>
-// Get CPU chip id
-//#include <ArduinoUniqueID.h>
+
 // sleep functions
 #include <avr/sleep.h>
+
 // power modes
 #include <avr/power.h>
+
 // watchdog timer
 #include <avr/wdt.h>
+
 // analog comparator
+// https://www.arduinolibraries.info/libraries/analog-comp
 #include "analogComp.h" // causes conflict with ArduinoUniqueID.h
+
 // various macros like signature id is defined here
 #include <avr/io.h>
+
 // variuos low lever functions like boot_signature_byte_get() and read fuses etc.
 #include <avr/boot.h>
-// 
+
+// CRC check of payload
+// https://github.com/RobTillaart/CRC
 //#include "CRC32.h"
 #include "CRC16.h"
 #include "CRC.h"
 
-//my own for timestamp
+// my library own for timestamp
 #include "timestamp.h"
+// my own library for random numbers
 #include "random.h"
 
 // Read and Write EEPROM
