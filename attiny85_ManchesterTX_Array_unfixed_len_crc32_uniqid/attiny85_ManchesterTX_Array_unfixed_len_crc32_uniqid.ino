@@ -171,7 +171,6 @@ const int32_t unix_timestamp = UNIX_TIMESTAMP;
 void setup() {
   // put your setup code here, to run once:
 
-  // https://robotics.stackexchange.com/questions/1753/assigning-serial-number-and-guid-to-a-microcontroller
   // get/set unitID
   set_id();
   settings.structure.unitID = myunitID.unit_ID.unitID;
@@ -484,10 +483,12 @@ int getADC() {
 }
 
 // check if unitID is in eeprom, if not try to generate it
+// https://robotics.stackexchange.com/questions/1753/assigning-serial-number-and-guid-to-a-microcontroller
 void set_id() {
   int eeAddress = 0;
   EEPROM.get(eeAddress, myunitID);
 
+  // What kind of reset ?
   if ((bitRead(MCUSR, EXTRF) and (bitRead(MCUSR, BORF) or bitRead(MCUSR, PORF))) and not bitRead(MCUSR, WDRF)) {
     // 1. after reprogramming the device
     // 2. reset logical low during power on
@@ -500,7 +501,7 @@ void set_id() {
         myunitID.unit_ID.unitID = myunitID.unit_ID.notunitID = 4711;
     };
   };
-  MCUSR = 0;
+  MCUSR = 0; // reset the interrupt semafores
 
   // generate new unitId if triggered by 4711 and save it to EEPROM
   if (!(myunitID.unit_ID.unitID == -myunitID.unit_ID.notunitID)) {
