@@ -26,8 +26,11 @@ Using Atmel ICE one can also work without bootloader and use Atmel Studion inste
 ATTinyCore by Spence Konde is used for these projects.
 
 Additional boards managers used, they are added Arduino IDE -> Preferences -> Additional bords manager URLs:
+
 http://drazzy.com/package_drazzy.com_index.json
+
 https://adafruit.github.io/arduino-board-index/package_adafruit_index.json
+
 https://github.com/mchr3k/arduino-libs-manchester/blob/master/library.json
 
 To select ATTINY85, Arduino IDE -> Tools -> Board -> Boards manager -> Attiny Core -> Attiny 24/45/85 (no bootloader)
