@@ -397,7 +397,6 @@ void setup_watchdog(int timerPrescaler)
   WDTCR |= _BV(WDIE);              //Set the interrupt enable, this will keep unit from resetting after each int
 }
 
-
 // From: http://21stdigitalhome.blogspot.com/2014/10/trinket-attiny85-internal-temperature.html
 
 float getChip_T() {
@@ -500,7 +499,6 @@ void set_id() {
     EEPROM.put(eeAddress, myunitID);
   };
 };
-
 
 //////////Interrupt Service Routines ///////////////////
 /////////////////////// ISR ////////////////////////////
