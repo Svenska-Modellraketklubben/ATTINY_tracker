@@ -14,3 +14,26 @@ If data is correctly recieved, checked by crc16, the data is presented on a smal
 
 # Schemas
 Not yet
+
+# How to program ATTiny MCU
+This variant uses Arduino IDE and Arduino UNO board for programming the Attiny85 MCU. 
+Attiny85 uses a bootloader in order to get the sketches uploaded to flash memory.
+Schema of wiring will be added later.
+
+As option we use also Atmel ICE as programmer but it requires building a small additional board with crystal and 6 pin ISP socket. Schema will be added later.
+Using Atmel ICE one can also work without bootloader and use Atmel Studion instead of Arduino IDE.
+
+ATTinyCore by Spence Konde is used for these projects.
+
+Additional boards managers used, they are added Arduino IDE -> Preferences -> Additional bords manager URLs:
+http://drazzy.com/package_drazzy.com_index.json
+https://adafruit.github.io/arduino-board-index/package_adafruit_index.json
+https://github.com/mchr3k/arduino-libs-manchester/blob/master/library.json
+
+To select ATTINY85, Arduino IDE -> Tools -> Board -> Boards manager -> Attiny Core -> Attiny 24/45/85 (no bootloader)
+
+Select programmer, Arduino IDE -> Tools -> Programmer -> Arduino UNO ISP (or Atmel ICE if you use that)
+
+To burn bootloader:
+Arduino IDE -> File -> Examples -> Arduino ISP
+Arduino IDE -> Tools -> Burn Bootloader
