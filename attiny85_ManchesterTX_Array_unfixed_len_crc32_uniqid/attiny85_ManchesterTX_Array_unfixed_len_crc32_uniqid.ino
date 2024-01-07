@@ -51,8 +51,8 @@ PIN 4 (PCINT4/XTAL2/CLKO/OC1B/ADC2) PB4 -| 3   6 |- PB1 (MISO/DO/AIN1/OC0B/OC1A/
 // PB3 pin where your transmitter is connected
 // PB2 pin powering up transmitter
 // PB0 unused
-// PB1 AIN1 analog comparator
-// PB4 PWM
+// PB1 AIN1 analog comparator to adjust PWM
+// PB4 PWM connected to step up switch transistor
 
 /*
 
